@@ -38,19 +38,13 @@ function invertArrayAndToString(array, chars) {
   let charInString = 0;
   let output = '';
   for (let i = 0; i < chars; i++) {
-    if (stringInArray === array.length) {
-      output += ' ';
-      stringInArray = 0;
-      charInString++;
-    }
-    if (array[stringInArray][charInString] == null) {
+    if (stringInArray === array.length || array[stringInArray][charInString] == null) {
       output += ' ';
       stringInArray = 0;
       charInString++;
     }
     output += array[stringInArray][charInString];
     stringInArray++;
-
   }
   return output;
 }
