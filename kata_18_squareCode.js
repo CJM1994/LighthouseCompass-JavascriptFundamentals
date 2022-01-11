@@ -1,16 +1,16 @@
 const squareCode = function (message) {
 
   const messageNoSpace = message.replace(/\s/g, '');
-  const columns = Math.ceil(Math.sqrt(messageNoSpace.length));
-  const squareArray = createSquareArray(messageNoSpace, columns);
+  const squareArray = createSquareArray(messageNoSpace);
   const squareCode = invertArrayAndToString(squareArray, messageNoSpace.length);
 
   return squareCode;
 
 };
 
-function createSquareArray(message, columns) {
+function createSquareArray(message) {
 
+  const columns = Math.ceil(Math.sqrt(message.length));
   let charCount = 0;
   let squareArray = [];
   let arrayRow = '';
